@@ -1,20 +1,10 @@
+import createNextIntlPlugin from "next-intl/plugin";
+
+const withNextIntl = createNextIntlPlugin();
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  i18n: {
-    locales: ["en", "es"],
-    defaultLocale: "en",
-    /* not sure how this would work with localhost */
-    // domains: [
-    //   {
-    //     domain: "local.com",
-    //     defaultLocale: "en",
-    //   },
-    //   {
-    //     domain: "local.es",
-    //     defaultLocale: "es",
-    //   },
-    // ],
-  },
+  // i18n: ...nope,
 };
 
-export default nextConfig;
+export default withNextIntl(nextConfig);
