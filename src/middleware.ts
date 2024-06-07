@@ -7,14 +7,9 @@ import createMiddleware from "next-intl/middleware";
 import { chain, FinalNextResponse } from "@nimpl/middleware-chain";
 import { Middleware } from "@nimpl/middleware-chain/dist/lib/types";
 import { auth, BASE_PATH } from "@/auth";
-import locales from "@/utils/locales.json";
+import * as intl from "@/intl";
 
-const intlMiddleware = createMiddleware({
-  // A list of all locales that are supported
-  locales,
-  // Used when no locale matches
-  defaultLocale: "en",
-});
+const intlMiddleware = createMiddleware({ ...intl });
 
 const authMiddleware = auth((req) => {
   const reqUrl = new URL(req.url);

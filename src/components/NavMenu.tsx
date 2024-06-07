@@ -1,8 +1,8 @@
 "use client";
 
-import Link from "next/link";
 import { signIn, signOut, useSession } from "next-auth/react";
-import { usePathname } from "next/navigation";
+import { Link, usePathname } from "@/intl/navigation";
+import LocaleSwitcher from "./LocaleSwitcher";
 
 const ACTIVE_ROUTE = "py-1 px-2 text-gray-300 bg-gray-700";
 const INACTIVE_ROUTE =
@@ -78,6 +78,8 @@ export default function NavMenu() {
           </li>
         </Link>
       </ul>
+      <hr className="my-4" />
+      <LocaleSwitcher />
     </div>
   );
 }
