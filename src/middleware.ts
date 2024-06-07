@@ -1,3 +1,4 @@
+// https://next-intl-docs.vercel.app/docs/routing/middleware#composing-other-middlewares
 // https://github.com/vercel/next.js/discussions/53997#discussioncomment-8626373
 // https://github.com/nextauthjs/next-auth/discussions/8961#discussioncomment-9508689
 // https://stackoverflow.com/a/78582968/3950644
@@ -40,8 +41,9 @@ export default chain([
 ]);
 
 export const config = {
+  // TODO: in a final solution a complete list of positive lookups would be better...
   matcher: [
-    "/((?!api/|_next/static|_next/image|favicon.ico).*)", // `/api` still gives issues
+    "/((?!api/|_next/static|_next/image|favicon.ico|manifest.webmanifest).*)", // `/api` still gives issues
     // "/", "/(en|es)/:path*",
   ],
 };

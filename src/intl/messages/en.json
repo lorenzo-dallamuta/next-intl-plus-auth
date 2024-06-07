@@ -4,5 +4,11 @@
   },
   "LocaleSwitcher": {
     "switchLocale": "Switch to {locale, select, en {English} es {Spanish}  other {Unknown}}"
+  },
+  "Manifest": {
+    "name": "18n test"
+  },
+  "Metadata": {
+    "title": "Next App With i18n"
   }
 }
