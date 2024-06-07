@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
+import NavMenu from "@/components/NavMenu";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,7 +26,10 @@ export default async function LocaleLayout({
     <html lang={locale}>
       <body className={inter.className}>
         <NextIntlClientProvider messages={messages}>
-          {children}
+          <main className="mx-auto max-w-5xl text-2xl flex gap-2 text-white">
+            <NavMenu />
+            {children}
+          </main>
         </NextIntlClientProvider>
       </body>
     </html>

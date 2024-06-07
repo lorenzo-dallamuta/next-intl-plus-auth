@@ -46,13 +46,13 @@ export default chain([
 
 export const config = {
   matcher: [
-    "/((?!api|_next/static|_next/image|favicon.ico).*)",
+    "/((?!api/|_next/static|_next/image|favicon.ico).*)", // `/api` still gives issues
     // "/", "/(en|es)/:path*",
   ],
 };
 
 // this is a remnant for a diffent approach without daisy chaining where
-// a check on the request url path switches on a middleware rather then 
+// a check on the request url path switches on a middleware rather then
 // the other, it's useless now since the intl middleware always runs first
 // but you never know...
 // const publicPages = ["/", "/login"];
