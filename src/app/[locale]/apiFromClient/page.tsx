@@ -3,14 +3,14 @@
 import { useState, useEffect } from "react";
 
 export default function APITestPage() {
-  const [name, setName] = useState<string>();
+  const [user, setUser] = useState<{ name: string; title: string }>();
 
   useEffect(() => {
     fetch("/api/whoami")
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        setName(data.name);
+        setUser({ name: data.name, title: data.title });
       });
   }, []);
 
@@ -19,7 +19,9 @@ export default function APITestPage() {
       <div>
         API Route From <span className="font-bold underline">Client</span>
       </div>
-      <div>Name: {name}</div>
+      <div>
+        Name: {user?.title} {user?.name}
+      </div>
     </div>
   );
 }

@@ -11,7 +11,7 @@ export default async function Page() {
       <div>
         API Route From <span className="font-bold underline">Server</span>
       </div>
-      <div>Name: {resp?.name}</div>
+      <div>Name: {resp?.title} {resp?.name}</div>
     </div>
   );
 }
